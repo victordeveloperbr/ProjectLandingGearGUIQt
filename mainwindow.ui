@@ -7,14 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>438</width>
-    <height>231</height>
+    <height>254</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Lading Gear</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="btnGearUp">
     <property name="geometry">
      <rect>
       <x>110</x>
@@ -27,7 +27,7 @@
      <string>Gear UP</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="btnGearDown">
     <property name="geometry">
      <rect>
       <x>220</x>
@@ -66,7 +66,7 @@
      <string>Connect</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox">
+   <widget class="QComboBox" name="cbPortCommunication">
     <property name="geometry">
      <rect>
       <x>120</x>
@@ -80,6 +80,37 @@
       <family>Roman</family>
       <pointsize>12</pointsize>
      </font>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>190</y>
+      <width>41</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Status</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblStatus">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>190</y>
+      <width>361</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>
