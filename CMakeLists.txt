@@ -18,8 +18,6 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
-       # senderplatform.cpp
-       # senderplatform.h
         senderthread.cpp
         senderthread.h
 )

@@ -18,6 +18,7 @@ class MainWindow : public QMainWindow
 public:
    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    int waitingToResponse {1000};
 
    private slots:
     void gearUPTransaction();

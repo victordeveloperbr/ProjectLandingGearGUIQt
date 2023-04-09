@@ -8,8 +8,10 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+
+
     ui->setupUi(this);
-    int waitingToResponse = 1000;
+
     const auto infos = QSerialPortInfo::availablePorts();
     // insert port to read by combo
     for(const QSerialPortInfo &info : infos)
@@ -22,6 +24,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(&m_thread, &SenderThread::error, this, &MainWindow::processError);
     connect(&m_thread, &SenderThread::timeout, this, &MainWindow::processTimeout);
 
+    m_thread.executeTransaction(ui->cbPortCommunication->currentText(), waitingToResponse, "GEAR_DOWN");
 }
 
 MainWindow::~MainWindow()
@@ -29,20 +32,22 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
+// when click here landing gear up
 void MainWindow::gearUPTransaction()
 {
+    ui->lblStatus->setText("Landing Gear Up!");
+    m_thread.executeTransaction(ui->cbPortCommunication->currentText(), waitingToResponse, "GEAR_UP");
 
 }
 
 void MainWindow::gearDownTransaction()
 {
-
+    ui->lblStatus->setText("Landing Gear Down!");
+    m_thread.executeTransaction(ui->cbPortCommunication->currentText(), waitingToResponse, "GEAR_DOWN");
 }
 
 void MainWindow::showResponse(const QString &s)
 {
-   // setControlsEnabled(true);
     ui->lblStatus->setText(tr("Traffic, transaction #%1:"
                                "\n\r-request: %2"
                                "\n\r-response: %3")
